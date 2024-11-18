@@ -9,6 +9,9 @@ Step 1
 Step 2
 ```sudo ./build```
 
+Step 3 (optional)
+Buy me a coffee: https://www.patreon.com/iGNUiCould
+
 You will see errors about things which were declared but never used. Ignore it.
 
 Read all pins:
@@ -18,7 +21,8 @@ Get Board Info
 ```gpio -v```
 
 Blink an LED (shell script)
-```#!/bin/sh -e
+```c
+#!/bin/sh -e
 
 # LED Pin - wiringPi pin 1 is BCM_GPIO 18.
 LED=1
@@ -30,10 +34,10 @@ while true; do
   sleep 0.5
   gpio write $LED 0
   sleep 0.5
-done```
+done
+```
 
-Step 3 (optional)
-Buy me a coffee: https://www.patreon.com/iGNUiCould
+That's all, folks!
 
 
 
