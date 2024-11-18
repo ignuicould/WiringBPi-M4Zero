@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+msg() {
+	echo "libwiringpi2: $1"
+}
+
+case "$1" in
+	configure)
+		if [ $(ls -l /usr/include/wiring*.h 2> /dev/null | wc -l) -gt 0 ]; then
+			msg "Remove previous built header files in /usr/include ..."
+			rm -rf /usr/include/wiring*.h
+		fi
+	;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+	;;
+esac
+
+exit 0
